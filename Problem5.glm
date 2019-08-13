@@ -12,7 +12,7 @@
 //     the annual cost.
 //
 // (c) What is missing from this estimate? 
-		Hot water demand
+		//Hot water demand
 
 //Setup modules, ask what you will need
 //A recorder, house, waterheater, actual_load
