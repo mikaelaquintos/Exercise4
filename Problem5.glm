@@ -6,11 +6,13 @@
 //
 // (a) Using the output data estimate the duty cycle (the 
 //     fraction of on-time to total time).
+		// Can't find .csv file
 //		
 // (b) Assuming the price of electricity is $0.15/kWh, estimate
 //     the annual cost.
 //
 // (c) What is missing from this estimate? 
+		Hot water demand
 
 //Setup modules, ask what you will need
 //A recorder, house, waterheater, actual_load
@@ -31,7 +33,7 @@ clock {
 object house{
 	floor_area 1250 sf; 
 	object waterheater {
-		object recorder {
+		object tape.recorder {
 		property actual_load;		//Property name
 		file "Problem5.csv";		//Where is it saving to?
 		interval -1; 				//When does it record?
