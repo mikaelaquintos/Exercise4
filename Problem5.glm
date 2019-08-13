@@ -1,0 +1,41 @@
+// Problem 5
+//
+// Create a recorder to collect 100 values of the default 
+// waterheater power transitions (actual_load) added to 
+// 100 houses from Problem 4. 
+//
+// (a) Using the output data estimate the duty cycle (the 
+//     fraction of on-time to total time).
+//		
+// (b) Assuming the price of electricity is $0.15/kWh, estimate
+//     the annual cost.
+//
+// (c) What is missing from this estimate? 
+
+//Setup modules, ask what you will need
+//A recorder, house, waterheater, actual_load
+
+module tape;
+module residential{
+	implicit_enduses NONE;  // implicit end-uses are driven by load shapes and these load shapes from defined in schedules
+}
+
+//Setup clock
+
+clock {
+	timezone PST+8PDT;
+	starttime '2001-01-01 00:00:00 PST';
+	stoptime '2001-01-29 00:00:00 PST';
+}
+
+object house{
+	floor_area 1250 sf; 
+	object waterheater {
+		object recorder {
+		property actual_load;		//Property name
+		file "Problem5.csv";		//Where is it saving to?
+		interval -1; 				//When does it record?
+		limit 100; 					//How much does it record?
+		};
+	};
+}
