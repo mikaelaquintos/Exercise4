@@ -17,7 +17,7 @@ jobs:
           command: |
             gridlabd Problem5.glm
             echo "Model finished"
-          store_artifacts:
+      - store_artifacts:
             path: /root/project
 
 
